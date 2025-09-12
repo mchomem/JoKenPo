@@ -27,6 +27,9 @@ public class Player
         var minimumLengthName = 2;
         var maximumLengthName = 10;
 
+        if(string.IsNullOrEmpty(name))
+            throw new PlayerNameEmptyException($"{nameof(PlayerNameEmptyException)}: The player's name cannot be empty.");
+
         if (length < minimumLengthName)
             throw new PlayerNameTooShortException($"{nameof(PlayerNameTooShortException)}: The player's name is too short. The minimum name length is {minimumLengthName}.");
 

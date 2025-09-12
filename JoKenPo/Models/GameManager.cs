@@ -18,8 +18,8 @@ public class GameManager
         Console.Clear();
         var continueGame = true;
 
-        Console.WriteLine($"Player 1: {player1.Name}");
-        Console.WriteLine($"Player 2: {player2.Name}\n");
+        Console.WriteLine($"{nameof(Player)} 1: {player1.Name}");
+        Console.WriteLine($"{nameof(Player)} 2: {player2.Name}\n");
 
         for (int i = 0; i < TotalRounds; i++)
         {
@@ -114,14 +114,6 @@ public class GameManager
         {
             Console.Write($"Type name for player {playerNumber}: ");
             playerName = Console.ReadLine()?.ToUpper()!;
-
-            if (string.IsNullOrEmpty(playerName))
-            {
-                Console.WriteLine($"Type a valid name for player {playerNumber}.");
-                Console.ReadKey();
-                Console.Clear();
-                continue;
-            }
 
             try
             {
