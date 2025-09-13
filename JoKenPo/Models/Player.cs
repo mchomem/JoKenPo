@@ -36,7 +36,8 @@ public class Player
         if(length > maximumLengthName)        
             throw new PlayerNameTooLongException($"{nameof(PlayerNameTooLongException)}: The player's name is too long. The maximum name length is {maximumLengthName}.");
 
-        if(Regex.IsMatch(name, @"\d+"))
+        // Check if only letters (no numbers)
+        if (Regex.IsMatch(name, @"\d+"))
             throw new PlayerNameWithNumberException($"{nameof(PlayerNameWithNumberException)}: The player's name cannot contain numbers.");
     }
 }

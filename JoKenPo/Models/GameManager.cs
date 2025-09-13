@@ -11,10 +11,8 @@ public class GameManager
 
     public void Start()
     {
-        int playerNumber = 1;
-
-        var player1 = PreparePlayer(playerNumber++);
-        var player2 = PreparePlayer(playerNumber++);
+        var player1 = PreparePlayer(1);
+        var player2 = PreparePlayer(2);
         Console.Clear();
         var continueGame = true;
 
