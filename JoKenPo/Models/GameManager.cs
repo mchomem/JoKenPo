@@ -22,15 +22,15 @@ public class GameManager
         for (int i = 0; i < TotalRounds; i++)
         {
             Console.WriteLine($"Round {i + 1}");
-            var movimentPlayer1 = player1.Choose();
-            var movimentPlayer2 = player1.Choose();
+            var movimentPlayer1 = player1.AutomaticSelectionHandMovement();
+            var movimentPlayer2 = player1.AutomaticSelectionHandMovement();
 
             Console.WriteLine($"{player1.Name} chose {movimentPlayer1.ToString().ToUpper()}");
             Console.WriteLine($"{player2.Name} chose {movimentPlayer2.ToString().ToUpper()}\n");
 
-            if (movimentPlayer1 == Moviment.Paper && movimentPlayer2 == Moviment.Paper
-                || movimentPlayer1 == Moviment.Rock && movimentPlayer2 == Moviment.Rock
-                || movimentPlayer1 == Moviment.Scissors && movimentPlayer2 == Moviment.Scissors)
+            if (movimentPlayer1 == HandMoviment.Paper && movimentPlayer2 == HandMoviment.Paper
+                || movimentPlayer1 == HandMoviment.Rock && movimentPlayer2 == HandMoviment.Rock
+                || movimentPlayer1 == HandMoviment.Scissors && movimentPlayer2 == HandMoviment.Scissors)
             {
                 Console.WriteLine("Draw game!");
                 Console.WriteLine("Press any key to play the next round");
@@ -41,9 +41,9 @@ public class GameManager
                 continue;
             }
 
-            if (movimentPlayer1 == Moviment.Paper && movimentPlayer2 == Moviment.Rock
-                || movimentPlayer1 == Moviment.Rock && movimentPlayer2 == Moviment.Scissors
-                || movimentPlayer1 == Moviment.Scissors && movimentPlayer2 == Moviment.Paper)
+            if (movimentPlayer1 == HandMoviment.Paper && movimentPlayer2 == HandMoviment.Rock
+                || movimentPlayer1 == HandMoviment.Rock && movimentPlayer2 == HandMoviment.Scissors
+                || movimentPlayer1 == HandMoviment.Scissors && movimentPlayer2 == HandMoviment.Paper)
             {
                 player1.AddScore();
                 Console.ForegroundColor = ConsoleColor.DarkGreen;

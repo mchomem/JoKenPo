@@ -1,6 +1,6 @@
 ﻿namespace JoKenPo.Enums;
 
-public enum Moviment
+public enum HandMoviment
 {
     Paper = 0,
     Rock = 1,

@@ -12,10 +12,10 @@ public class Player
     public string Name { get; private set; }
     public int Score { get; private set; }
 
-    public Moviment Choose()
+    public HandMoviment AutomaticSelectionHandMovement()
     {
         int input = new Random().Next(0, 3);
-        var choice = Enum.GetValues<Moviment>()[input];
+        var choice = Enum.GetValues<HandMoviment>()[input];
         return choice;
     }
 
