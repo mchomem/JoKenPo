@@ -14,7 +14,7 @@ public class Player
 
     public Moviment Choose()
     {
-        int input = new Random().Next(0, 2);
+        int input = new Random().Next(0, 3);
         var choice = Enum.GetValues<Moviment>()[input];
         return choice;
     }
